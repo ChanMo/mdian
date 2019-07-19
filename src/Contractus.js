@@ -9,6 +9,8 @@ const Grid = styled.div`
   div {
     text-align: right;
     margin-right: 1rem;
+  }
+  p {
     color: white;
   }
   @media(max-width:${props=>props.theme.sm}) {

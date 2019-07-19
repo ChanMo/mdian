@@ -45,8 +45,8 @@ export default function Navigation() {
       <img src={logo} alt="logo" />
       <Nav>
         <NavItem><a href="/">首页</a></NavItem>
-        <NavItem><a href="/">服务项目</a></NavItem>
-        <NavItem><a href="/">漫点动态</a></NavItem>
+        <NavItem><a href="https://cms.mandiankeji.com">服务项目</a></NavItem>
+        <NavItem><a href="https://cms.mandiankeji.com">漫点动态</a></NavItem>
       </Nav>
     </Box>
   )

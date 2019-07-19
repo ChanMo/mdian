@@ -2,6 +2,12 @@ import React from 'react'
 import styled from 'styled-components'
 import Section from './Section'
 
+const list = [
+  ['278', 'NB智能锁', require("./yunjia.png"), '获得联通投资，全市渠道支持'],
+  ['246', '道地易通', require("./xys19.png"), '国内首家基于区块链技术的"电商交易平台"']
+]
+
+
 const Grid = styled.div`
   display: flex;
   flex-wrap: wrap;
@@ -21,6 +27,10 @@ const Col = styled.div`
       width: 40vw;
     }
   }
+  a img {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
 `
 
 const More = styled.p`
@@ -37,26 +47,21 @@ export default function Projects() {
     <Section>
         <h2>服务项目&nbsp;<small>PROJECTS</small></h2>
         <Grid>
-          <Col>
-            <img src={require("./huobip.png")} alt="huobip" />
+            {list.map((item,index) => (
+          <Col key={index}>
+            <img src={item[2]} alt={item[1]} />
             <div>
-              <h4>火币优惠版</h4>
-              <p>提供查询行情, 快讯, 计算器等功能</p>
-              <p>同时可以节省手续费</p>
-              <a href="/" className="button">查看详情</a>
+              <h4>{item[1]}</h4>
+              <p>{item[3]}</p>
+              <a href={'https://cms.mandiankeji.com/?page_id='+item[0]}>
+                <img src={require('./go.png')} alt="go" />
+              </a>
             </div>
           </Col>
-          <Col>
-            <img src={require("./xys19.png")} alt="xys19" />
-            <div>
-              <h4>道地易通</h4>
-              <p>国内首家基于区块链技术的"电商交易平台"</p>
-              <a href="/" className="button">查看详情</a>
-            </div>
-          </Col>
+            ))}
         </Grid>
         <More>
-          <a href="/">查看更多</a>
+          <a href="https://cms.mandiankeji.com">查看更多</a>
         </More>
       </Section>
   )
