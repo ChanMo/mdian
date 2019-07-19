@@ -47,7 +47,7 @@ export default function News() {
     <Section>
       <h2>漫点动态<br /><small>NEWS</small></h2>
         {list.map((item,index) => (
-      <Item>
+      <Item key={index}>
         <Date>{item[4]}</Date>
         <img src={item[2]} alt={item[0]} />
         <div>
