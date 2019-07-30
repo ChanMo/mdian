@@ -12,6 +12,18 @@ const Grid = styled.div`
   flex-wrap: wrap;
 `
 
+const P = styled.p`
+  white-space: pre-line;
+`
+
+const Line = styled.div`
+  margin-top: 1rem;
+  height: 3px;
+  width: 1px;
+  background: transparent;
+  transition: width 1.5s;
+`
+
 const Col = styled.div`
   width: 50%;
   padding: 1.5rem;
@@ -22,13 +34,19 @@ const Col = styled.div`
   img {
     margin-bottom: 1rem;
   }
+  &:hover {
+    div {
+      width: 200px;
+      background: black;
+    }
+  }
 `
 
 const list = [
-  ['APP', require("./app.png"), '使用ReactNative框架, 成本低，开发效率提高40%， 同时又有媲美原生应用的性能和用户体验'],
-  ['小程序', require("./wxa.png"), '采用原生小程序技术, 根据小程序的特性进行定制化开发'],
-  ['区块链', require("./blocklian.png"), '基于ETH, EOS的DAPP合约开发，完整的数字货币交易所, 钱包, 理财APP开发经验'],
-  ['PC网站', require("./pc.png"), '基于React进行前后端分离的应用型网站开发, 基于WordPress快速搭建企业官网'],
+  ['APP', require("./app.png"), '使用ReactNative框架, 成本低，开发效率提高40%， \n同时又有媲美原生应用的性能和用户体验'],
+  ['小程序', require("./wxa.png"), '采用原生小程序技术, \n根据小程序的特性进行定制化开发'],
+  ['区块链', require("./blocklian.png"), '基于ETH, EOS的DAPP合约开发，\n完整的数字货币交易所, 钱包, 理财APP开发经验'],
+  ['PC网站', require("./pc.png"), '基于React进行前后端分离的应用型网站开发, \n基于WordPress快速搭建企业官网'],
 ]
 
 export default function Services() {
@@ -36,14 +54,15 @@ export default function Services() {
     <Section>
       <Header>
         <h2>服务范围<br /><small>SERVICES</small></h2>
-        <p>提供APP, 小程序, 区块链, 网站等开发, 涉及行业包括区块链金融, 传统金融, 新型医疗, 物联网, 租房, 教育等.</p>
+        <p>提供APP, 小程序, 区块链, 网站等开发, <br />涉及行业包括区块链金融, 传统金融, 新型医疗, 物联网, 租房, 教育等.</p>
       </Header>
       <Grid>
           {list.map((item,index) => (
             <Col key={index}>
               <h3>- {item[0]}</h3>
               <img src={item[1]} alt={item[0]} />
-              <p>{item[2]}</p>
+              <P>{item[2]}</P>
+              <Line />
             </Col>
           ))}
       </Grid>

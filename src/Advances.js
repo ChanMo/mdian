@@ -7,13 +7,40 @@ const Grid = styled.div`
   flex-direction: column;
 `
 
+const Cover = styled.div`
+  position: relative;
+  width: 240px;
+  height: 240px;
+  background: #999;
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: top 1s, left 1s;
+  }
+  @media(max-width:${props=>props.theme.sm}) {
+    min-width: 30vw;
+    min-height: 30vw;
+    width: 30vw;
+    height: 30vw;
+    img {
+      position: relative;
+      width: 30vw;
+    }
+  }
+`
+
+const Content = styled.div`
+  padding: 0 1.5rem;
+  @media(max-width:${props=>props.theme.sm}) {
+    padding: 0 1rem;
+  }
+`
+
 const Col = styled.div`
   display: flex;
   align-items: flex-end;
   margin-bottom: 0.5rem;
-  div {
-    padding: 0 1rem;
-  }
   &:nth-child(2n) {
     align-self: flex-end;
     text-align: right;
@@ -22,10 +49,14 @@ const Col = styled.div`
   &:nth-child(2n+1) {
     align-self: flex-start;
   }
-  @media(max-width:${props=>props.theme.sm}) {
-    img {
-      width: 30vw;
+  @media(min-width:${props=>props.theme.sm}) {
+    &:hover img {
+      top: 0.8rem;
+      left: 0.8rem;
     }
+  }
+  @media(max-width:${props=>props.theme.sm}) {
+    align-items: center;
     &:nth-child(2n) {
       align-self: flex-start;
       text-align: left;
@@ -48,11 +79,13 @@ export default function Advances() {
       <Grid>
         {list.map((item,index) => (
         <Col key={index}>
-          <img src={item[1]} alt={item[0]} />
-          <div>
+          <Cover>
+            <img src={item[1]} alt={item[0]} />
+          </Cover>
+          <Content>
             <h4>{item[0]}</h4>
             <p>{item[2]}</p>
-          </div>
+          </Content>
         </Col>
         ))}
       </Grid>
