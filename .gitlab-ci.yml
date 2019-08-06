@@ -9,7 +9,7 @@ cache:
         - node_modules/
 
 install_dependencies:
-    state: build
+    stage: build
     script:
         - npm install
     artifacts:
