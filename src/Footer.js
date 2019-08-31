@@ -10,9 +10,8 @@ const Container = styled.p`
 `
 
 export default function Footer() {
-  const text = 'Copy Right © 济南漫点信息科技有限公司版权所有 鲁ICP备19017316号'
+  const text = 'Copyright © 鲁ICP备19017316号'
   return (
     <Container>{text}</Container>
   )
 }
-
