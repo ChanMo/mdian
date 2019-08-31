@@ -24,3 +24,7 @@ yarn-error.log*
 
 *.tar.gz
 *.zip
+
+# deploy
+fabfile.py
+deploy.py
